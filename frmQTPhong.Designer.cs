@@ -21,7 +21,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.btnLogOut = new MaterialSkin.Controls.MaterialButton();
             this.lblAdminInfo = new MaterialSkin.Controls.MaterialLabel();
             this.picAdminAvatar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
@@ -57,7 +56,6 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
-            this.panelHeader.Controls.Add(this.btnLogOut);
             this.panelHeader.Controls.Add(this.lblAdminInfo);
             this.panelHeader.Controls.Add(this.picAdminAvatar);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -65,26 +63,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1294, 65);
             this.panelHeader.TabIndex = 0;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogOut.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLogOut.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnLogOut.Depth = 0;
-            this.btnLogOut.HighEmphasis = true;
-            this.btnLogOut.Icon = null;
-            this.btnLogOut.Location = new System.Drawing.Point(1170, 14);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnLogOut.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnLogOut.Size = new System.Drawing.Size(103, 36);
-            this.btnLogOut.TabIndex = 4;
-            this.btnLogOut.Text = "ĐĂNG XUẤT";
-            this.btnLogOut.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnLogOut.UseAccentColor = false;
-            this.btnLogOut.UseVisualStyleBackColor = true;
             // 
             // lblAdminInfo
             // 
@@ -537,7 +515,6 @@
         private System.Windows.Forms.Panel panelHeader;
         private MaterialSkin.Controls.MaterialLabel lblAdminInfo;
         private System.Windows.Forms.PictureBox picAdminAvatar;
-        private MaterialSkin.Controls.MaterialButton btnLogOut;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private MaterialSkin.Controls.MaterialCard cardSearch;
         private MaterialSkin.Controls.MaterialTextBox2 txtSearchRoom;

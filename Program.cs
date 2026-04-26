@@ -16,7 +16,7 @@ namespace ManHinhChinhQuanTri
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmQTReport());
+            Application.Run(new frmMHQT());
         }
     }
 }

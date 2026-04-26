@@ -18,10 +18,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQTReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.btnLogOut = new MaterialSkin.Controls.MaterialButton();
             this.lblAdminInfo = new MaterialSkin.Controls.MaterialLabel();
             this.picAdminAvatar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
@@ -51,7 +50,6 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
-            this.panelHeader.Controls.Add(this.btnLogOut);
             this.panelHeader.Controls.Add(this.lblAdminInfo);
             this.panelHeader.Controls.Add(this.picAdminAvatar);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -59,26 +57,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1412, 65);
             this.panelHeader.TabIndex = 0;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogOut.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLogOut.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnLogOut.Depth = 0;
-            this.btnLogOut.HighEmphasis = true;
-            this.btnLogOut.Icon = null;
-            this.btnLogOut.Location = new System.Drawing.Point(1285, 15);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnLogOut.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnLogOut.Size = new System.Drawing.Size(103, 36);
-            this.btnLogOut.TabIndex = 2;
-            this.btnLogOut.Text = "ĐĂNG XUẤT";
-            this.btnLogOut.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnLogOut.UseAccentColor = false;
-            this.btnLogOut.UseVisualStyleBackColor = true;
             // 
             // lblAdminInfo
             // 
@@ -135,10 +113,10 @@
             this.cardFilters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cardFilters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cardFilters.Location = new System.Drawing.Point(15, 15);
-            this.cardFilters.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardFilters.Margin = new System.Windows.Forms.Padding(15);
             this.cardFilters.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardFilters.Name = "cardFilters";
-            this.cardFilters.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardFilters.Padding = new System.Windows.Forms.Padding(15);
             this.cardFilters.Size = new System.Drawing.Size(1382, 95);
             this.cardFilters.TabIndex = 0;
             // 
@@ -275,10 +253,10 @@
             this.cardReportContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cardReportContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cardReportContent.Location = new System.Drawing.Point(15, 140);
-            this.cardReportContent.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardReportContent.Margin = new System.Windows.Forms.Padding(15);
             this.cardReportContent.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardReportContent.Name = "cardReportContent";
-            this.cardReportContent.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardReportContent.Padding = new System.Windows.Forms.Padding(15);
             this.cardReportContent.Size = new System.Drawing.Size(1382, 595);
             this.cardReportContent.TabIndex = 1;
             // 
@@ -291,27 +269,27 @@
             this.dgvSummaryData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSummaryData.BackgroundColor = System.Drawing.Color.White;
             this.dgvSummaryData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSummaryData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSummaryData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSummaryData.ColumnHeadersHeight = 45;
             this.dgvSummaryData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCriteria,
             this.colValue,
             this.colPercentage});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSummaryData.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSummaryData.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSummaryData.EnableHeadersVisualStyles = false;
             this.dgvSummaryData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvSummaryData.Location = new System.Drawing.Point(19, 312);
@@ -385,7 +363,6 @@
         private System.Windows.Forms.Panel panelHeader;
         private MaterialSkin.Controls.MaterialLabel lblAdminInfo;
         private System.Windows.Forms.PictureBox picAdminAvatar;
-        private MaterialSkin.Controls.MaterialButton btnLogOut;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private MaterialSkin.Controls.MaterialCard cardFilters;
         private MaterialSkin.Controls.MaterialLabel lblFilterTitle;

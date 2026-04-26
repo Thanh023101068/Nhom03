@@ -33,7 +33,24 @@ namespace ManHinhChinhQuanTri
 
         private void frmMHQT_Load(object sender, EventArgs e)
         {
+            lblAdminInfo.Text = "Xin chào: Đặng Lý Quốc Thành (Quản trị viên)";
 
+            cardUser.Click += (s, ev) => OpenForm(new frmPhanQuyen());
+            cardRoom.Click += (s, ev) => OpenForm(new frmQTPhong());
+            cardConfig.Click += (s, ev) => OpenForm(new frmQTConfig());
+            cardData.Click += (s, ev) => OpenForm(new frmQTData());
+            cardReport.Click += (s, ev) => OpenForm(new frmQTReport());
+
+            btnLogOut.Click += (s, ev) => {
+                if (MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    this.Close();
+            };
         }
+
+        private void OpenForm(Form childForm)
+        {
+            childForm.ShowDialog();
+        }
+
     }
 }

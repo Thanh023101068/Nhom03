@@ -40,9 +40,6 @@
             this.lblReportMgmt = new MaterialSkin.Controls.MaterialLabel();
             this.cardNotice = new MaterialSkin.Controls.MaterialCard();
             this.lblNoticeTitle = new MaterialSkin.Controls.MaterialLabel();
-            this.lstNotices = new MaterialSkin.Controls.MaterialListView();
-            this.colTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdminAvatar)).BeginInit();
             this.tableLayoutPanelMain.SuspendLayout();
@@ -152,7 +149,7 @@
             this.cardUser.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.cardUser.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardUser.Name = "cardUser";
-            this.cardUser.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardUser.Padding = new System.Windows.Forms.Padding(15);
             this.cardUser.Size = new System.Drawing.Size(472, 130);
             this.cardUser.TabIndex = 0;
             // 
@@ -190,7 +187,7 @@
             this.cardRoom.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.cardRoom.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardRoom.Name = "cardRoom";
-            this.cardRoom.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardRoom.Padding = new System.Windows.Forms.Padding(15);
             this.cardRoom.Size = new System.Drawing.Size(472, 130);
             this.cardRoom.TabIndex = 1;
             // 
@@ -228,7 +225,7 @@
             this.cardConfig.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.cardConfig.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardConfig.Name = "cardConfig";
-            this.cardConfig.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardConfig.Padding = new System.Windows.Forms.Padding(15);
             this.cardConfig.Size = new System.Drawing.Size(472, 130);
             this.cardConfig.TabIndex = 2;
             // 
@@ -266,7 +263,7 @@
             this.cardData.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.cardData.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardData.Name = "cardData";
-            this.cardData.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardData.Padding = new System.Windows.Forms.Padding(15);
             this.cardData.Size = new System.Drawing.Size(472, 130);
             this.cardData.TabIndex = 3;
             // 
@@ -304,7 +301,7 @@
             this.cardReport.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.cardReport.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardReport.Name = "cardReport";
-            this.cardReport.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardReport.Padding = new System.Windows.Forms.Padding(15);
             this.cardReport.Size = new System.Drawing.Size(472, 130);
             this.cardReport.TabIndex = 4;
             // 
@@ -334,15 +331,14 @@
             // 
             this.cardNotice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cardNotice.Controls.Add(this.lblNoticeTitle);
-            this.cardNotice.Controls.Add(this.lstNotices);
             this.cardNotice.Depth = 0;
             this.cardNotice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cardNotice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cardNotice.Location = new System.Drawing.Point(509, 15);
-            this.cardNotice.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardNotice.Margin = new System.Windows.Forms.Padding(15);
             this.cardNotice.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardNotice.Name = "cardNotice";
-            this.cardNotice.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardNotice.Padding = new System.Windows.Forms.Padding(15);
             this.tableLayoutPanelMain.SetRowSpan(this.cardNotice, 5);
             this.cardNotice.Size = new System.Drawing.Size(888, 720);
             this.cardNotice.TabIndex = 6;
@@ -355,45 +351,9 @@
             this.lblNoticeTitle.Location = new System.Drawing.Point(22, 21);
             this.lblNoticeTitle.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblNoticeTitle.Name = "lblNoticeTitle";
-            this.lblNoticeTitle.Size = new System.Drawing.Size(146, 19);
+            this.lblNoticeTitle.Size = new System.Drawing.Size(90, 19);
             this.lblNoticeTitle.TabIndex = 0;
-            this.lblNoticeTitle.Text = "BẢNG TIN QUẢN TRỊ";
-            // 
-            // lstNotices
-            // 
-            this.lstNotices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstNotices.AutoSizeTable = false;
-            this.lstNotices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lstNotices.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstNotices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colTitle,
-            this.colDate});
-            this.lstNotices.Depth = 0;
-            this.lstNotices.FullRowSelect = true;
-            this.lstNotices.GridLines = true;
-            this.lstNotices.HideSelection = false;
-            this.lstNotices.Location = new System.Drawing.Point(22, 62);
-            this.lstNotices.MinimumSize = new System.Drawing.Size(218, 104);
-            this.lstNotices.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.lstNotices.MouseState = MaterialSkin.MouseState.OUT;
-            this.lstNotices.Name = "lstNotices";
-            this.lstNotices.OwnerDraw = true;
-            this.lstNotices.Size = new System.Drawing.Size(840, 631);
-            this.lstNotices.TabIndex = 1;
-            this.lstNotices.UseCompatibleStateImageBehavior = false;
-            this.lstNotices.View = System.Windows.Forms.View.Details;
-            // 
-            // colTitle
-            // 
-            this.colTitle.Text = "Tiêu đề thông báo hệ thống";
-            this.colTitle.Width = 550;
-            // 
-            // colDate
-            // 
-            this.colDate.Text = "Ngày đăng";
-            this.colDate.Width = 200;
+            this.lblNoticeTitle.Text = "THÔNG BÁO";
             // 
             // frmMHQT
             // 
@@ -452,9 +412,6 @@
         private MaterialSkin.Controls.MaterialLabel lblReportMgmt;
         private MaterialSkin.Controls.MaterialCard cardNotice;
         private MaterialSkin.Controls.MaterialLabel lblNoticeTitle;
-        private MaterialSkin.Controls.MaterialListView lstNotices;
-        private System.Windows.Forms.ColumnHeader colTitle;
-        private System.Windows.Forms.ColumnHeader colDate;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
