@@ -46,7 +46,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Depth = 0;
-            this.lblUser.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblUser.Location = new System.Drawing.Point(575, 30);
             this.lblUser.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblUser.Name = "lblUser";
@@ -102,6 +102,7 @@
             this.btnXacNhan.Text = "GỬI YÊU CẦU ĐĂNG KÝ";
             this.btnXacNhan.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnXacNhan.UseAccentColor = false;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // txtMucDich
             // 
@@ -138,7 +139,7 @@
             this.cboCa.DropDownHeight = 174;
             this.cboCa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCa.DropDownWidth = 121;
-            this.cboCa.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cboCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cboCa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cboCa.Hint = "Chọn ca mượn";
             this.cboCa.IntegralHeight = false;
@@ -160,7 +161,7 @@
             this.cboPhong.DropDownHeight = 174;
             this.cboPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPhong.DropDownWidth = 121;
-            this.cboPhong.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cboPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cboPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cboPhong.Hint = "Chọn phòng máy";
             this.cboPhong.IntegralHeight = false;
@@ -177,7 +178,7 @@
             // 
             this.lblNgay.AutoSize = true;
             this.lblNgay.Depth = 0;
-            this.lblNgay.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgay.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblNgay.Location = new System.Drawing.Point(50, 45);
             this.lblNgay.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblNgay.Name = "lblNgay";
@@ -204,6 +205,7 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng ký sử dụng phòng";
+            this.Load += new System.EventHandler(this.frmMHDKPhong_Load_1);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();

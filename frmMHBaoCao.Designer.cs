@@ -75,7 +75,7 @@
             this.cardForm.Depth = 0;
             this.cardForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cardForm.Location = new System.Drawing.Point(323, 135);
-            this.cardForm.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.cardForm.Margin = new System.Windows.Forms.Padding(15);
             this.cardForm.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardForm.Name = "cardForm";
             this.cardForm.Padding = new System.Windows.Forms.Padding(33, 31, 33, 31);
@@ -100,6 +100,7 @@
             this.btnGui.Text = "GỬI BÁO CÁO";
             this.btnGui.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnGui.UseAccentColor = false;
+            this.btnGui.Click += new System.EventHandler(this.btnGui_Click);
             // 
             // txtMoTa
             // 
@@ -136,7 +137,7 @@
             this.cboMay.DropDownHeight = 174;
             this.cboMay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMay.DropDownWidth = 121;
-            this.cboMay.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cboMay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cboMay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cboMay.Hint = "Chọn máy tính bị hỏng";
             this.cboMay.IntegralHeight = false;
@@ -158,7 +159,7 @@
             this.cboPhong.DropDownHeight = 174;
             this.cboPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPhong.DropDownWidth = 121;
-            this.cboPhong.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cboPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cboPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cboPhong.Hint = "Chọn phòng máy xảy ra sự cố";
             this.cboPhong.IntegralHeight = false;
@@ -183,6 +184,7 @@
             this.Padding = new System.Windows.Forms.Padding(3, 67, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cáo sự cố";
+            this.Load += new System.EventHandler(this.frmMHBaoCao_Load_1);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
