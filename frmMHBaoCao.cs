@@ -21,6 +21,8 @@ namespace MHSV
         {
             InitializeComponent();
 
+            LoadDSPhong();
+
             var materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
 
@@ -73,16 +75,24 @@ namespace MHSV
                 try
                 {
                     con.Open();
-                    // Câu lệnh Insert vào bảng Báo cáo
-                    string sql = @"INSERT INTO BAOCAO_SUCO (MaTB, NoiDung, NgayBC, MaSV, TrangThai) 
-                                   VALUES (@MaTB, @NoiDung, GETDATE(), @MaSV, N'Mới tiếp nhận')";
+                    // Câu lệnh Insert đã được cập nhật chuẩn với CSDL mới
+                    string sql = @"INSERT INTO BAOCAO_SUCO 
+                           (MaBC, tenDNNguoiBao, MaTB, MaPhong, MoTa, NgayBao, TrangThai) 
+                           VALUES 
+                           ((SELECT ISNULL(MAX(MaBC), 0) + 1 FROM BAOCAO_SUCO), 
+                            @TenDN, @MaTB, @MaPhong, @MoTa, GETDATE(), N'Chưa xử lý')";
 
                     SqlCommand cmd = new SqlCommand(sql, con);
 
-                    // Lấy text của cboMay (VD: TB01_PM01)
+                    // Truyền các tham số
                     cmd.Parameters.AddWithValue("@MaTB", cboMay.Text);
-                    cmd.Parameters.AddWithValue("@NoiDung", txtMoTa.Text);
-                    cmd.Parameters.AddWithValue("@MaSV", "023101068"); // Mã SV mẫu
+                    cmd.Parameters.AddWithValue("@MoTa", txtMoTa.Text);
+
+                    // Lấy mã phòng từ combobox cboPhong
+                    cmd.Parameters.AddWithValue("@MaPhong", cboPhong.SelectedValue);
+
+                    // Dùng tên đăng nhập có sẵn trong CSDL thay vì MaSV
+                    cmd.Parameters.AddWithValue("@TenDN", "sv_023101082");
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Gửi báo cáo sự cố thành công!", "Thông báo");
@@ -100,6 +110,38 @@ namespace MHSV
         private void frmMHBaoCao_Load_1(object sender, EventArgs e)
         {
 
-        }        
+        }
+
+        private void cboMay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Cấm chạy nếu form đang load mà chưa có giá trị thực sự
+            if (cboPhong.SelectedValue == null || cboPhong.SelectedValue is DataRowView)
+                return;
+
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                try
+                {
+                    // Câu lệnh tìm các thiết bị (máy tính) thuộc cái mã phòng vừa chọn
+                    string sql = "SELECT maTB, tenTB FROM THIETBI WHERE maPhong = @MaPhong";
+                    SqlDataAdapter da = new SqlDataAdapter(sql, con);
+
+                    // Lấy mã phòng đang được chọn ở cboPhong truyền vào câu SQL
+                    da.SelectCommand.Parameters.AddWithValue("@MaPhong", cboPhong.SelectedValue.ToString());
+
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    cboMay.DataSource = dt;
+                    // Hiển thị mã máy (VD: PC_A101_01) để nhìn cho chuẩn
+                    cboMay.DisplayMember = "maTB";
+                    cboMay.ValueMember = "maTB";
+                }
+                catch (Exception ex)
+                {
+                    // Bỏ qua nếu lỗi vặt lúc khởi tạo
+                }
+            }
+        }
     }
 }

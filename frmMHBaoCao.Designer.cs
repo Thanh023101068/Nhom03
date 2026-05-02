@@ -149,6 +149,7 @@
             this.cboMay.Size = new System.Drawing.Size(545, 49);
             this.cboMay.StartIndex = 0;
             this.cboMay.TabIndex = 1;
+            this.cboMay.SelectedIndexChanged += new System.EventHandler(this.cboMay_SelectedIndexChanged);
             // 
             // cboPhong
             // 

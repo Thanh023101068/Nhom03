@@ -144,6 +144,11 @@
             this.cboCa.Hint = "Chọn ca mượn";
             this.cboCa.IntegralHeight = false;
             this.cboCa.ItemHeight = 43;
+            this.cboCa.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
             this.cboCa.Location = new System.Drawing.Point(50, 190);
             this.cboCa.MaxDropDownItems = 4;
             this.cboCa.MouseState = MaterialSkin.MouseState.OUT;

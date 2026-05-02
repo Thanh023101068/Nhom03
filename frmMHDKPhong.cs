@@ -21,6 +21,8 @@ namespace MHSV
         {
             InitializeComponent();
 
+            LoadDSPhong();
+
             var materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
 
@@ -46,7 +48,7 @@ namespace MHSV
             {
                 try
                 {
-                    string sql = "SELECT MaPhong, TenPhong FROM PHONGMAY";
+                    string sql = "SELECT MaPhong, TenPhong, SucChua FROM PHONGMAY";
                     SqlDataAdapter da = new SqlDataAdapter(sql, con);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -68,18 +70,29 @@ namespace MHSV
                 try
                 {
                     con.Open();
-                    // Câu lệnh thêm vào CSDL. 
-                    // Lưu ý: MaSV mình đang để cứng là 023101068 (Mã của bạn Đặng Lý Quốc Thành)
-                    string sql = @"INSERT INTO DANGKY_PHONG (PHO_MaPhong, NgayDK, Ca, MucDich, MaSV, TrangThai) 
-                                   VALUES (@MaPhong, @Ngay, @Ca, @MucDich, @MaSV, N'Chờ duyệt')";
+                    // Câu lệnh INSERT đã được cập nhật cho khớp với CSDL mới
+                    string sql = @"INSERT INTO DANGKY_PHONG 
+                           (MaDK, TenDN, MaPhong, MaMH, NgaySuDung, CaHoc, MucDich, TrangThaiDuyet, LyDo) 
+                           VALUES 
+                           ((SELECT ISNULL(MAX(MaDK), 0) + 1 FROM DANGKY_PHONG), 
+                            @TenDN, @MaPhong, @MaMH, @NgaySuDung, @CaHoc, @MucDich, N'Chờ duyệt', '')";
 
                     SqlCommand cmd = new SqlCommand(sql, con);
 
+                    // Truyền tham số
                     cmd.Parameters.AddWithValue("@MaPhong", cboPhong.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Ngay", dtpNgayMuon.Value);
-                    cmd.Parameters.AddWithValue("@Ca", cboCa.Text);
+                    cmd.Parameters.AddWithValue("@NgaySuDung", dtpNgayMuon.Value);
+
+                    // Lưu ý: Cột CaHoc là số nguyên (int), nên cboCa.Text của bạn chỉ nên chứa số (ví dụ: 1, 2, 3)
+                    cmd.Parameters.AddWithValue("@CaHoc", Convert.ToInt32(cboCa.Text));
+
                     cmd.Parameters.AddWithValue("@MucDich", txtMucDich.Text);
-                    cmd.Parameters.AddWithValue("@MaSV", "023101068");
+
+                    // Tên đăng nhập của sinh viên (đã đổi từ MaSV)
+                    cmd.Parameters.AddWithValue("@TenDN", "sv_023101082");
+
+                    // Thêm mã môn học (Tạm thời gán cứng môn C#, sau này bạn có thể làm thêm combobox Môn học)
+                    cmd.Parameters.AddWithValue("@MaMH", "LTC#");
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Đăng ký phòng thành công! Yêu cầu đang chờ duyệt.", "Thông báo");
