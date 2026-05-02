@@ -68,6 +68,7 @@
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvatar.TabIndex = 2;
             this.picAvatar.TabStop = false;
+            this.picAvatar.Click += new System.EventHandler(this.picAvatar_Click);
             // 
             // cardFilter
             // 
@@ -95,7 +96,7 @@
             this.btnTimKiem.Depth = 0;
             this.btnTimKiem.HighEmphasis = true;
             this.btnTimKiem.Icon = null;
-            this.btnTimKiem.Location = new System.Drawing.Point(880, 31);
+            this.btnTimKiem.Location = new System.Drawing.Point(763, 24);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnTimKiem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnTimKiem.Name = "btnTimKiem";
@@ -105,6 +106,7 @@
             this.btnTimKiem.Text = "TRA CỨU";
             this.btnTimKiem.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnTimKiem.UseAccentColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // cboCaHoc
             // 
@@ -115,26 +117,28 @@
             this.cboCaHoc.DropDownHeight = 174;
             this.cboCaHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCaHoc.DropDownWidth = 121;
-            this.cboCaHoc.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cboCaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cboCaHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cboCaHoc.Hint = "Chọn ca học";
             this.cboCaHoc.IntegralHeight = false;
             this.cboCaHoc.ItemHeight = 43;
-            this.cboCaHoc.Location = new System.Drawing.Point(450, 27);
+            this.cboCaHoc.Location = new System.Drawing.Point(406, 24);
             this.cboCaHoc.MaxDropDownItems = 4;
             this.cboCaHoc.MouseState = MaterialSkin.MouseState.OUT;
             this.cboCaHoc.Name = "cboCaHoc";
             this.cboCaHoc.Size = new System.Drawing.Size(350, 49);
             this.cboCaHoc.StartIndex = 0;
             this.cboCaHoc.TabIndex = 2;
+            this.cboCaHoc.SelectedIndexChanged += new System.EventHandler(this.cboCaHoc_SelectedIndexChanged);
             // 
             // dtpNgay
             // 
             this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgay.Location = new System.Drawing.Point(120, 40);
             this.dtpNgay.Name = "dtpNgay";
-            this.dtpNgay.Size = new System.Drawing.Size(250, 30);
+            this.dtpNgay.Size = new System.Drawing.Size(250, 22);
             this.dtpNgay.TabIndex = 1;
+            this.dtpNgay.ValueChanged += new System.EventHandler(this.dtpNgay_ValueChanged);
             // 
             // lblChonNgay
             // 
@@ -147,6 +151,7 @@
             this.lblChonNgay.Size = new System.Drawing.Size(81, 19);
             this.lblChonNgay.TabIndex = 0;
             this.lblChonNgay.Text = "Chọn ngày:";
+            this.lblChonNgay.Click += new System.EventHandler(this.lblChonNgay_Click);
             // 
             // cardGrid
             // 
@@ -160,7 +165,7 @@
             this.cardGrid.MouseState = MaterialSkin.MouseState.HOVER;
             this.cardGrid.Name = "cardGrid";
             this.cardGrid.Padding = new System.Windows.Forms.Padding(14);
-            this.cardGrid.Size = new System.Drawing.Size(1094, 568);
+            this.cardGrid.Size = new System.Drawing.Size(1094, 556);
             this.cardGrid.TabIndex = 2;
             // 
             // lstLich
@@ -175,8 +180,8 @@
             this.colTrangThai});
             this.lstLich.Depth = 0;
             this.lstLich.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstLich.FullRowSelect = true;
-            this.lstLich.GridLines = true;
             this.lstLich.HideSelection = false;
             this.lstLich.Location = new System.Drawing.Point(14, 14);
             this.lstLich.MinimumSize = new System.Drawing.Size(200, 100);
@@ -184,10 +189,11 @@
             this.lstLich.MouseState = MaterialSkin.MouseState.OUT;
             this.lstLich.Name = "lstLich";
             this.lstLich.OwnerDraw = true;
-            this.lstLich.Size = new System.Drawing.Size(1066, 540);
+            this.lstLich.Size = new System.Drawing.Size(1066, 528);
             this.lstLich.TabIndex = 0;
             this.lstLich.UseCompatibleStateImageBehavior = false;
             this.lstLich.View = System.Windows.Forms.View.Details;
+            this.lstLich.SelectedIndexChanged += new System.EventHandler(this.lstLich_SelectedIndexChanged);
             // 
             // colPhong
             // 
@@ -211,16 +217,17 @@
             // 
             // frmMHLichPhong
             // 
-            this.ClientSize = new System.Drawing.Size(1100, 800);
+            this.ClientSize = new System.Drawing.Size(1100, 788);
             this.Controls.Add(this.cardGrid);
             this.Controls.Add(this.cardFilter);
             this.Controls.Add(this.panelHeader);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "frmMHLichPhong";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xem lịch phòng máy";
+            this.Load += new System.EventHandler(this.frmMHLichPhong_Load_1);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();

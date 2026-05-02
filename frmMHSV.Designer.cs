@@ -133,6 +133,7 @@
             this.tableLayoutPanel1.SetRowSpan(this.cardNotice, 3);
             this.cardNotice.Size = new System.Drawing.Size(808, 540);
             this.cardNotice.TabIndex = 4;
+            this.cardNotice.Paint += new System.Windows.Forms.PaintEventHandler(this.cardNotice_Paint);
             // 
             // materialLabel4
             // 
@@ -162,6 +163,8 @@
             this.cardSchedule.Padding = new System.Windows.Forms.Padding(14);
             this.cardSchedule.Size = new System.Drawing.Size(330, 161);
             this.cardSchedule.TabIndex = 1;
+            this.cardSchedule.Click += new System.EventHandler(this.cardSchedule_Click);
+            this.cardSchedule.Paint += new System.Windows.Forms.PaintEventHandler(this.cardSchedule_Paint);
             // 
             // materialLabel1
             // 
@@ -174,6 +177,7 @@
             this.materialLabel1.Size = new System.Drawing.Size(93, 19);
             this.materialLabel1.TabIndex = 1;
             this.materialLabel1.Text = "LỊCH PHÒNG";
+            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // pictureBox2
             // 
@@ -272,6 +276,7 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Phòng Máy Tính/Phòng Thực Hành";
+            this.Load += new System.EventHandler(this.frmMHSV_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
